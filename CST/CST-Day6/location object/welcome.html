@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .browser-warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="greeting"></h2>
+
+  <div class="info">
+    <p><strong>Address:</strong> <span id="address"></span></p>
+    <p><strong>Gender:</strong> <span id="gender"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Mobile:</strong> <span id="mobile"></span></p>
+  </div>
+
+  <div id="browser-warning" class="browser-warning"></div>
+
+  <script>
+    // Function to get query params from the URL
+    function getQueryParams() {
+      const params = {};
+      // بتشيل علامة ? من أول الـ query string.
+      const queryString = window.location.search.slice(1);
+      const pairs = queryString.split('&');
+
+      for (let i = 0; i < pairs.length; i++) {
+        const pair = pairs[i].split('=');
+        params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+      }
+
+      return params;
+    }
+      //قراءة البيانات وحطها في المتغير data:
+
+    const data = getQueryParams();
+
+    // Display greeting
+    const greeting = document.getElementById('greeting');
+    greeting.innerText = `Welcome ${data.title} ${data.name}!`;
+
+    // Display user info
+    document.getElementById('address').innerText = data.address;
+    document.getElementById('gender').innerText = data.gender;
+    document.getElementById('email').innerText = data.email;
+    document.getElementById('mobile').innerText = data.mobile;
+
+    // Browser check
+    const browserWarning = document.getElementById('browser-warning');
+    const userAgent = navigator.userAgent.toLowerCase();
+    // console.log(browserWarning);
+
+    console.log(navigator.userAgent);
+
+    if (!userAgent.includes("chrome")) {
+      browserWarning.innerText = "We recommend using Google Chrome for the best experience!";
+      console.log(browserWarning.innerText);
+    }
+  </script>
+
+</body>
+</html>

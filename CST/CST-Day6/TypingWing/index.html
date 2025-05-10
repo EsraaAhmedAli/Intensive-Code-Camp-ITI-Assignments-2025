@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parent Window</title>
+</head>
+<body>
+
+  <h2>Parent Window</h2>
+
+  <button onclick="openChild()">Open Window</button>
+
+  <script>
+    let childWindow;
+// close screen
+    function openChild() {
+      // هنا بنفتح صفحة جديدة (child.html) كنافذة فرعية
+      childWindow = window.open("./typing.html", "childWindow", "width=300,height=300");
+    }
+  </script>
+
+</body>
+</html>

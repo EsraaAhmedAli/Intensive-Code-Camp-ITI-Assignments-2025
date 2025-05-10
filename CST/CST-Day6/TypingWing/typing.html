@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Child Window</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    #typing {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      border-right: 2px solid black;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  
+  </style>
+</head>
+<body>
+<!-- 
+  <h2> Window Typing </h2> -->
+
+  <div>
+    <div id="typing"></div>
+  </div>
+
+  <script>
+    // عرفنا النص اللي هيظهر حرف حرف
+    const message = "my name is esraa ";
+    // جيبنا العنصر اللي عنده id="typing" عشان نحط فيه الكلام.
+    const typingElement = document.getElementById("typing");
+   // ده عداد هيحدد إحنا وصلنا لأي حرف في الرسالة
+    let index = 0;
+
+    function type() {
+        // بتتأكد إن فيه لسه حروف ما ظهرتش
+      if (index < message.length) {
+        // بتضيف حرف جديد (charAt(index))
+        typingElement.innerHTML += message.charAt(index);
+        index++;
+        // يعني انتظر 100 ملي ثانية قبل ما تنفذ type() تاني... وده اللي بيعمل تأثير الكتابة البطيئة.
+        setTimeout(type, 100);
+      } else {
+        typingElement.style.borderRight = "none";
+        window.close();
+      }
+    }
+    // معناه إن أول ما الصفحة تحمل، الدالة type() تبدأ تلقائيًا.
+
+    window.onload = type;
+  </script>
+
+</body>
+</html>

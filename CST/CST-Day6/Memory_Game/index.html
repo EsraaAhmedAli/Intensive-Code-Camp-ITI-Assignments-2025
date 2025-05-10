@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 10px;
+      margin-top: 20px;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+    }
+
+    #congrats-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 24px;
+      color: green;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Memory Game</h2>
+  <div class="game-board" id="game-board"></div>
+
+  <!-- الرسالة اللي هتظهر لما يخلص اللعب -->
+  <div id="congrats-message">🎉 Congratulations! You Won! 🎉</div>
+
+  <!-- ربط الجافاسكريبت -->
+  <script src="./scripit.js"></script>
+
+</body>
+</html>

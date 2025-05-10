@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Moving Marble with Images</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+
+    .marble {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Moving Marble Animation with Images</h2>
+
+  <div class="container">
+    <img class="marble active" src="./images/marble1.jpg" alt="marble" onmouseenter="stop()" onmouseleave="start()">
+    <img class="marble" src="./images/marble1.jpg" alt="marble" onmouseenter="stop()" onmouseleave="start()">
+    <img class="marble" src="./images/marble1.jpg" alt="marble" onmouseenter="stop()" onmouseleave="start()">
+    <img class="marble" src="./images/marble1.jpg" alt="marble" onmouseenter="stop()" onmouseleave="start()">
+    <img class="marble" src="./images/marble1.jpg" alt="marble" onmouseenter="stop()" onmouseleave="start()">
+  </div>
+
+  <!-- رابط ملف الجافا سكريبت -->
+  <script src="./scripit.js"></script>
+
+</body>
+
+</html>
