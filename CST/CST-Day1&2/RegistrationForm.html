@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./style/RegistrationForm.css'>
+    <script src='main.js'></script>
+</head>
+
+<body style="background-color: rgb(250, 224, 224);">
+    <form method="post" action="./Home.html">
+        <table border="2" cellpadding="25"
+            style=" margin-left:auto ; margin-right: auto; border-collapse:  collapse; border-color: rgb(228, 21, 173);">
+            <br>
+            <caption>
+                <h2> <U> Registration Form </U></h2>
+            </caption>
+
+            <tr>
+                <td>
+                    <label for="f"> First Name </label>
+                </td>
+                <td>
+                    <input id="f" type="text" placeholder="Enter Your First Name" name="First-Name" accesskey="I"
+                        tabindex="2" style="width:100%;" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="last_name"> <u>L</u>ast Name </label>
+                </td>
+                <td>
+                    <input id="last_name" type="text" placeholder="Enter Your Last Name" name="last-Name" accesskey="L"
+                        style="width:100%;" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="email"> E<u>m</u>ail </label>
+                </td>
+                <td>
+                    <input id="email" type="email" placeholder="Enter Your Email" name="Email" accesskey="M"
+                        style="width:100%;" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="password"> <u>P</u>assword </label>
+                </td>
+                <td>
+                    <input id="password" type="password" placeholder="Enter Your password" name="password" accesskey="P"
+                        style="width:100%;" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td rowspan="2">
+                    <label for="gender"> <u> G</u>ender </label>
+                </td>
+                <td>
+                    <input id="female" name="gender" type="radio" accesskey="G" value="female" />
+                    <label for="female"> Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input id="male" type="radio" name="gender" accesskey="M" value="male" />
+                    <label for="male"> male</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="country"> country</label>
+                </td>
+                <td>
+                    <select style="width:100%;" name="Country">
+                        <option> Select a Country </option>
+                        <optgroup label=Africa>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Libya">Libya</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Moroco">Moroco</option>
+                        </optgroup>
+                        <optgroup label=Europe disabled>
+                            <option value="Italy">Italy</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Spain">Spain</option>
+                        </optgroup>
+                        <optgroup label=Asia>
+                            <option value="Palestine">Palestine</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="india">india</option>
+                        </optgroup>
+
+                    </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td><label> Birthday</label> </td>
+                <td> <input type="date" style="width:100%;" /> </td>
+            </tr>
+
+            <tr>
+                <th colspan="2"> <label> <u>Interests</u></label></th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="Sports" id="Sports" cellpadding="40" /> <label for="Sports">
+                        Sports</label>
+                    <input type="checkbox" name="Music" id="Music" /> <label for=" Music"> Music</label>
+                    <input type="checkbox" name="Fashion" id="Fashion" /> <label for="Fashion"> Fashion</label>
+                    <input type="checkbox" name="Reading" id="Reading" /> <label for="Reading"> Reading</label>
+                    <input type="checkbox" name="Shopping" id="Shopping" /> <label for="Shopping"> Shopping</label>
+                    <input type="checkbox" name="Movies" id="Movies" /> <label for="Movies"> Movies</label>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <th colspan="2"> <label> <u>BIO</u></label></th>
+            </tr>
+
+            <tr>
+                <td colspan="2"> <textarea style="width:100%; resize: none;" cols="5" rows="5"
+                        name="describtion"></textarea></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="reset">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+</html>
