@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Dropdown</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    .menu {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .menu-btn {
+      background-color: deeppink;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-box {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .box {
+      background: hotpink;
+      color: white;
+      padding: 10px;
+      margin: 5px auto;
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <div class="menu-btn services-btn">Services</div>
+    <div class="dropdown-box">
+      <div class="box">Item 1</div>
+      <div class="box">Item 2</div>
+      <div class="box">Item 3</div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('.services-btn').click(function () {
+        $('.dropdown-box').slideToggle();
+      });
+    });
+  </script>
+
+</body>
+</html>

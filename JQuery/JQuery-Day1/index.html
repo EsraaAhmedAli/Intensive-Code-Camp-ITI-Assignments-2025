@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Single Page App</title>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .menu-btn {
+      background: linear-gradient(hotpink, deeppink);
+      color: white;
+      font-size: 24px;
+      padding: 15px 30px;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 4px 4px 6px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+    }
+
+
+
+
+    .menu-btn:hover {
+      opacity: 0.8;
+    }
+
+    .section {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: deeppink;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px gray;
+    }
+
+    .gallery-controls {
+      margin-top: 10px;
+    }
+
+    .preview-box {
+      text-align: left;
+    }
+
+    .box{
+      padding: 20px;
+      background: deeppink;
+      border: 1px solid white;
+      width: 400px;
+      margin: auto;
+      display: none;
+
+
+    }
+    #services .box {
+  background: linear-gradient(hotpink, deeppink);
+  color: white;
+  font-size: 16px;
+  width: 200px;
+  margin: 5px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  display: none; /* تبدأ مخفية */
+  transition: all 0.3s ease;
+}
+.dropdown-box {
+  position: absolute;
+  top: 100px; /* يكون تحت الـ menu */
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 999;
+}
+
+.box {
+  background: linear-gradient(hotpink, deeppink);
+  color: white;
+  font-size: 16px;
+  width: 200px;
+  margin: 5px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <div class="menu-btn" data-target="about">About</div>
+    <div class="menu-btn" data-target="gallery">Gallery</div>
+    <div class="menu-btn services-btn">Services</div>
+    <div class="menu-btn" data-target="complain">Complain</div>
+  </div>
+
+  <!-- Sections -->
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>Welcome to our jQuery single-page app demo.</p>
+  </div>
+
+  <div id="gallery" class="section">
+    <h2>Gallery</h2>
+    <img id="gallery-img" src="./images/1.jpg" width="400" height="250">
+    <div class="gallery-controls">
+      <!-- <button id="prev">⏮ Prev</button>
+      <button id="next">Next ⏭</button> -->
+
+
+      <button id="prev"> <img  src="./images/left.png" width="50" height="50"></button>
+      <button id="next"> <img src="./images/right.png" width="50" height="50"></button>
+
+
+    </div>
+  </div>
+
+
+  <div class="dropdown-box">
+    <div class="box">Item #1</div>
+    <div class="box">Item #2</div>
+    <div class="box">Item #3</div>
+  </div>
+
+
+  <!-- <div id="services" class="section">
+    <div class="dropdown">
+      <div class="box">Item #1</div>
+      <div class="box">Item #2</div>
+      <div class="box">Item #3</div>
+    </div>
+  </div> -->
+
+  <!-- <div id="services"> -->
+    <!-- <h2>Our Services</h2> -->
+    <!-- <ul class="services-list"> -->
+      <!-- <li>Website Development</li>
+      <li>UI/UX Design</li>
+      <li>SEO Optimization</li>
+      <li>Technical Support</li> -->
+
+
+      <!-- <div class="box"> item1 </div>
+      <div  class="box"> item2 </div>
+      <div class="box"> item2 </div> -->
+    <!-- </ul> -->
+  <!-- </div>
+
+  <div class="box"> item1 </div>
+  <div  class="box"> item2 </div>
+  <div class="box"> item2 </div> -->
+
+  <div id="complain" class="section">
+    <h2>Complain Form</h2>
+    <div class="form-box">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4"></textarea>
+
+      <button id="send">Send</button>
+    </div>
+
+    <div class="preview-box" style="display:none;">
+      <h3>Preview</h3>
+      <p><strong>Name:</strong> <span id="prev-name"></span></p>
+      <p><strong>Email:</strong> <span id="prev-email"></span></p>
+      <p><strong>Message:</strong> <span id="prev-msg"></span></p>
+      <button id="edit">Edit</button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // Show and hide sections
+      $('.menu-btn').click(function () {
+        let target = $(this).attr('data-target');
+        $('.section').not('#' + target).slideUp();
+        $('#' + target).slideDown();
+      });
+
+      // Image Gallery
+      const images = ['./images/1.jpg', './images/2.jpg', './images/3.jpg'];
+      let index = 0;
+
+      function updateImage() {
+        $('#gallery-img').fadeTo(200, 0.3, function () {
+          $(this).attr('src', images[index]).fadeTo(300, 1);
+        });
+      }
+
+      $('#next').click(function () {
+        index = (index + 1) % images.length;
+        updateImage();
+      });
+
+      $('#prev').click(function () {
+        index = (index - 1 + images.length) % images.length;
+        updateImage();
+      });
+
+      // Send complain
+      $('#send').click(function () {
+        $('#prev-name').text($('#name').val());
+        $('#prev-email').text($('#email').val());
+        $('#prev-msg').text($('#message').val());
+
+        $('.form-box').hide();
+        $('.preview-box').fadeIn();
+      });
+
+      // Edit button
+      $('#edit').click(function () {
+        $('.preview-box').hide();
+        $('.form-box').fadeIn();
+      });
+      // $('.services-list li').
+
+
+      // $(".menu-btn2").click(2000,function(){
+      //   $('.box').slideToggle('slow', function(){
+        
+
+      //   });
+      // })
+
+// عند الضغط على زر "Services"
+$('.services-btn').click(function () {
+  $('.section').slideUp();            // نخفي كل الأقسام الأخرى
+  $('.dropdown-box').slideToggle();   // نعرض أو نخفي العناصر المنسدلة
+});
+
+// عند الضغط على أي زر آخر في القائمة
+$('.menu-btn').not('.services-btn').click(function () {
+  $('.dropdown-box').slideUp();       // نخفي القائمة المنسدلة
+});
+
+
+
+
+
+
+      // Use .each() to loop on services
+    //   $('.services-list li').each(function (i) {
+    //     $(this).append(" ✅");
+
+    //   });
+     });
+  </script>
+</body>
+</html>
