@@ -1,0 +1,10 @@
+.div{
+    color: white;
+    width: 200px;
+    height: 30px;
+    border: 2px rgb(1, 1, 1) solid;
+    background-color: brown;
+}
+.img {
+    transition: transform 0.5s ease;
+  }
