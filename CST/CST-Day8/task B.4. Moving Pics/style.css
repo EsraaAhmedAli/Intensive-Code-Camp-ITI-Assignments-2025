@@ -1,0 +1,32 @@
+.active{
+    border: 2px solid rgba(0, 0, 255, 0.227);
+    transform: scale(1.2);}
+    .imgHolder {
+        position: relative;
+        width: 300px;  /* Adjust width as needed */
+        height: 300px; /* Adjust height as needed */
+        border: 2px solid rgb(45, 203, 137);
+        margin: 20px;
+    }
+    
+    .imgHolder img {
+        width: 50px; /* Adjust size as needed */
+        height: auto;
+        position: absolute;
+    }
+    
+    #leftImg {
+        top: 10%;
+        left: 5%;
+    }
+    
+    #rightImg {
+        top: 10%;
+        right: 5%;
+    }
+    
+    #bottomImg {
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }

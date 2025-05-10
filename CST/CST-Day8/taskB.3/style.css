@@ -1,0 +1,52 @@
+.images , .PersonalMassage {
+    width: 50%;
+    margin: auto;
+    text-align: center; 
+
+}
+
+.images img, .images2 img {
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    margin: 15px 5px;
+    cursor: pointer;
+    transition: 0.25s all;
+
+}
+
+.images2 {
+    text-align: center; 
+}
+h1{
+    text-align: center;
+}
+
+body {
+    background-color: rgb(245, 233, 220);
+}
+textarea{
+    resize: none;
+}
+#generateBtn{
+    display: block;
+    margin: auto;
+}
+
+.active{
+    border: 2px solid rgba(66, 66, 175, 0.227);
+    transform: scale(1.2);}
+    .imgHolder {
+        position: relative;
+        width: 300px;
+        height: 300px; 
+        border: 2px solid red;
+        margin: 20px;
+    }
+    
+    .imgHolder img {
+        width: 50px; 
+        height: auto;
+        position: absolute;
+    }
+    
