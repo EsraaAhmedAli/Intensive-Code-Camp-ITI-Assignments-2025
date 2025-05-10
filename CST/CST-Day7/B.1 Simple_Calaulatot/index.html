@@ -1,0 +1,217 @@
+<html>
+
+<head>
+
+    <style>
+        .width {
+            width: 55px;
+        }
+
+        table {
+            float: left;
+            margin-right: 10px;
+        }
+
+        #td {
+            font-family: comic sans ms;
+            text-align: center;
+            color: white;
+            background-color: gray;
+            font-size: 9pt;
+        }
+
+        #ans {
+            width: 100px;
+            text-align: right;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <table border="7">
+        <tr>
+            <td colspan="4" id="td"> JavaScript Calculator </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input id="Answer" type="text" id="ans">
+            </td>
+            <td>
+                <input type="button" class="width" value="=" onclick="EnterEqual()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" class="width" value="1" onclick="EnterNumber(value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="2" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="3" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="+" onclick="EnterOperator(this.value)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" class="width" value="4" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="5" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="6" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="-" onclick="EnterOperator(this.value)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" class="width" value="7" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="8" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="9" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="*" onclick="EnterOperator(this.value)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" class="width" value="C" id="clearButton" onclick="EnterClear()">
+            </td>
+            <td>
+                <input type="button" class="width" value="0" onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="." onclick="EnterNumber(this.value)">
+            </td>
+            <td>
+                <input type="button" class="width" value="/" onclick="EnterOperator(this)">
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        var display = document.getElementById('Answer');
+        var currentInput = '';
+        function EnterNumber(value) {
+            currentInput += value;
+            display.value = currentInput;
+            console.log(currentInput)
+
+        }
+
+        function EnterClear() {
+            currentInput = '';
+            display.value = '';
+        }
+        var clearButton = document.getElementById('clearButton');
+        clearButton.addEventListener('click', EnterClear);
+
+
+        function EnterOperator(myElem) {
+            console.log(myElem);
+            currentInput += myElem;
+            display.value = currentInput;
+            console.log(currentInput);
+        }
+
+        function EnterEqual() {
+            try {
+                var result = calculator(currentInput);
+                display.value = result;
+                currentInput = result.toString();
+            } catch (error) {
+                display.value = 'Error';
+                currentInput = '';
+            }
+        }
+
+
+        // char  number     numbers
+        // '1'	"1"	        []
+        // '2'   "2"        []
+        // '+'              [12]
+        // '3'    "3"       [12]
+
+        function calculator(expression) {
+            var numbers = [];
+            var number = '';
+
+
+            for (var i = 0; i < expression.length; i++) {
+                var char = expression[i];
+                if (char >= '0' && char <= '9' || char === '.') {
+                    number += char;
+                } else {
+                    numbers.push(parseFloat(number));
+                    number = '';
+                }
+            }
+            // دي اخر رقم
+            if (number !== '') {
+                numbers.push(parseFloat(number));
+            }
+
+            var operators = [];
+            for (var j = 0; j < expression.length; j++) {
+                var op = expression[j];
+                if (op === '+' || op === '-' || op === '*' || op === '/') {
+                    operators.push(op);
+                }
+            }
+            if (numbers.length === 0) return 0;
+
+            var result = numbers[0];
+
+            for (var k = 0; k < operators.length; k++) {
+                var operator = operators[k];
+                var nextNumber = numbers[k + 1];
+
+                if (isNaN(nextNumber)) {
+                    return 'Error';
+                }
+
+                switch (operator) {
+                    case '+':
+                        result += nextNumber;
+                        break;
+                    case '-':
+                        result -= nextNumber;
+                        break;
+                    case '*':
+                        result *= nextNumber;
+                        break;
+                    case '/':
+                        if (nextNumber === 0) {
+                            return 'Error: Divide by 0';
+                        }
+                        result /= nextNumber;
+                        break;
+                    default:
+                        return 'Error';
+                }
+            }
+
+            return result;
+            console.log(result);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
