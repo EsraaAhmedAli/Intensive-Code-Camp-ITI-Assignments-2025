@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> task1 html5</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='./style.css'>
+
+</head>
+<body>
+
+    <video  src="./video/frozen.mp4"   width="300px"  height="300px" poster="./image/frozen.jpg" controls></video><br>
+    <input type="range" id="seekBar" value="0" min="0" step="0.1"/> 
+    <span id="timeDisplay">0:00 / 0:00</span>
+    <div id="time"></div>
+    <button id="play"> play </button>
+    <button id="Stop"> Stop </button> 
+    <button id="10secadd"> << </button>
+    <button id="5secadd"> < </button>
+    <button id="10secsub"> > </button>
+    <button id="5secsub"> >> </button>
+    <button id="mute"> mute </button>
+    <label for="volumeBar">volume:</label>
+    <input type="range" id="volumeBar" value="1" min="0" max="1" step="0.01">
+    <br>
+    <label for="SpeedBar">speed:</label>
+    <input type="range" id="SpeedBar" value="1" min="0"  step="0.01">
+
+    <script src='./scripit.js'></script>
+
+</body>
+</html>
