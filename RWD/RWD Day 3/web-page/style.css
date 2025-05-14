@@ -1,0 +1,79 @@
+
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curved-box {
+    width: 140px;
+    height: 150px;
+}
+
+.curved {
+    width: 200px;
+    height: 120px;
+}
+
+.curved-box path {
+    fill: #ff7f50;
+    stroke: #ff7f50;
+    stroke-width: 2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+.curved path {
+    fill: #ff7f50;
+    stroke: #ff7f50;
+    stroke-width: 2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.curved-box path:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #e0663c;
+}
+.line-with-triangle {
+position: relative;
+height: 2px;
+background-color: #ff7f50;
+width: 100%;
+}
+
+.line-with-triangle::before {
+content: '';
+position: absolute;
+top: -20px; 
+left: 50%;
+transform: translateX(-50%);
+border-left: 20px solid transparent; 
+border-right: 20px solid transparent; 
+border-bottom: 20px solid #ff7f50; 
+}
+
