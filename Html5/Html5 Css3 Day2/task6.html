@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exact Gradient Logo</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const centerX = 200;
+  const centerY = 200;
+
+  const outerRadius = 120;
+  const outerGradient = ctx.createRadialGradient(centerX, centerY, 20, centerX, centerY, outerRadius);
+  outerGradient.addColorStop(1, "#3A59D1");
+  outerGradient.addColorStop(0, "#ffffff");    
+
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, outerRadius, 0, Math.PI * 2);
+  ctx.fillStyle = outerGradient;
+  ctx.fill();
+  ctx.closePath();
+
+  const innerRadius = 90;
+  const innerGradient = ctx.createRadialGradient(centerX + 40, centerY - 30, 5, centerX, centerY, innerRadius);
+  innerGradient.addColorStop(0, "#ffffff");   // لمعة بيضاء خفيفة في الأعلى
+  innerGradient.addColorStop(1, "#1c3faa");   // أزرق غامق في الأسفل واليمين
+
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, innerRadius, 0, Math.PI * 2);
+  ctx.fillStyle = innerGradient;
+  ctx.fill();
+  ctx.closePath();
+
+ 
+  ctx.font = "bold 100px Arial";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("E", centerX, centerY);
+</script>
+</body>
+</html>

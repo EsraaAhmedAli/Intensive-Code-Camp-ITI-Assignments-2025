@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>test</title>
+
+</head>
+
+<body>
+    <img src="./images/img1.jpg">
+    <script>
+
+
+
+        // function outerfun (x,y,z){
+        //     function innerfun(a,b){
+        //         return x+y+z+a+BeforeUnloadEvent
+        //     }
+        //     return innerfun
+        // }
+
+        // var result = outerfun(1,2,3)(1,2);
+        // console.log(result + "\n");
+
+        // // var data = result(1,2);
+        // // console.log(data + "\n");
+
+        // question 1 
+        // (function () {
+        //     console.log(1);
+        //     setTimeout(function () {
+        //         console.log(2)
+        //     }, 1000)
+        //     setTimeout(function () {
+        //         console.log(3)
+        //     }, 0)
+        //     console.log(4);
+
+        // })
+        // output
+        //  1   4   3  2
+
+
+        // question 2 
+        //     var a = (function(y , x ){
+        //         var x = null
+        //     return{
+        //         fun : function(x){return this.bar(x*y);} ,
+        //         bar : function(x){return x+y ;}
+
+        //     }(3,4)
+        // }
+
+        // )
+        // alert(a.fun(2))
+        // output   ==> undefined
+
+
+        // question 3
+
+
+        //   var a = {},
+        //   b={key : 'b'},
+        //   c= {key : 'c'};
+
+        //   a[b]=123;
+        //   a[c]=456;
+
+        //   console.log(a[b]);
+        //   console.log(a.b);
+
+
+        // output ==> 456  undefined
+
+
+
+
+
+
+
+
+
+
+        //   function Employee(empname , empage ){
+        //     this.name = empname;
+        //     this.age = empage;
+        //     this.display = function(){
+        //         return this.name;
+        //     }
+
+        //   }
+
+        //   var emp1 =  new Employee("esraa" , 20);
+        //   console.log(emp1)
+        //   console.log(emp1.display())
+        //   var emp2 = new Employee("nnnnnnnnn" , 202);
+        //   console.log(emp2.display())
+
+        // function change(){
+        //     console.log(this)
+        // }
+        // document.getElementsByName('img')[0].onmouseover = function(){
+        //     console.log(this);
+        // }
+
+
+        // var obj = {
+        //     username : "nnnnnnnnn",
+        //     display : function(){
+        //         console.log(this)
+        //         console.log(this.username)
+        //     },
+
+        // }
+
+        // console.log(obj.display())  // undefined
+        // myArr = new Array("A","D",1,"8","B","C",10); alert(myArr.shift(1)) 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // (function () {
+        //     console.log(0);
+        //     setTimeout(function () {
+        //         console.log(1)
+
+        //     }, 0)
+
+        //     console.log(2)
+        //     setTimeout(function () {
+        //         console.log(3)
+        //     }, 1000)
+
+
+        //     console.log(4);
+        //     setTimeout(function () {
+        //         console.log(5)
+        //     }, 0)
+        //     console.log(6)
+        // })()
+
+
+        //output ===>    0246153
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+
+        // question 5
+        // (function () {
+        //     var myObject = {
+        //         prop: "prop1",
+        //         func: function () {
+        //             var a = b = 3; 
+        //             console.log("property function: this.prop = " + this.prop);  // prop1
+
+        //             setTimeout(function () {
+        //                 console.log("setTimeout function: myObject.prop = " + myObject.prop); //prop1
+        //             }, 3000);
+
+        //             (function () {
+        //                 console.log(this);
+        //                 console.log("immediate function: this.prop = " + this.prop);  // undefined 
+        //             })();
+        //         }
+        //     };
+
+
+        //     var prop = "stringProp";
+        //     myObject.func();
+
+        //     console.log("a defined? " + (typeof a !== 'undefined'));   //  no
+        //     console.log("b defined? " + (typeof b !== 'undefined'));   //  true
+        // })();
+
+
+        // output ==> property function: this.prop = prop1
+        //            immediate function: this.prop = undefined
+        //            a defined? false
+        //            b defined? true
+        //            setTimeout function: myObject.prop = prop1
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // question 6 
+
+
+        // function User(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // var me = new User("JavaScript", 25);
+
+        // User.prototype.getName = function () { return this.name; };
+        // User.prototype.getAge = function () { return this.age; };
+        // User.prototype.job = "WebTech ;";
+        // User.Loc = "Cairo ;";
+
+        // alert(User.Loc);   // cairo
+        // alert(me.Loc);      ///  undefined
+
+
+
+        //////////// /////////////////////////////////////////////////////////////////////////////
+
+
+        // function User(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // function Person(address, city) {
+        //     this.address = address;
+        //     this.city = city || "Cai ";
+        // }
+
+        // User.prototype = Person.prototype;
+
+        // Person.prototype.Country = "Egypt";
+
+
+
+        // output ==> Prototypal inheritance
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        //question 
+        // function User(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // function Person(address, city) {
+        //     this.address = address;
+        //     this.city = city || "Cai";
+        // }
+
+        // User.prototype = Person.prototype;
+        // Person.prototype.Country = "Egypt";
+
+        // var me = new User("JavaScript", 25);
+        // Egypt                   // undefined
+        // alert("country: " + me.Country + "; city: " + me.city);
+
+        // output ==> country: Egypt; city: undefined
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        // question 7
+
+        // var Employee = function (name, age, salary) {
+        //     var person = {};
+
+        //     Object.defineProperty(person, "name", {
+        //         value: name,
+        //         writable: true,
+        //         configurable: true,
+        //         enumerable: true
+        //     });
+
+        //         Object.defineProperty(person, "age", {
+        //             value: age
+        //         });
+
+        //         Object.defineProperty(person, "salary", {
+        //             get: function () { return salary; },
+        //             set: function (val) { salary = val; }
+        //         });
+
+        //         Object.defineProperty(person, "show", {
+        //             value: function () {
+        //                 alert("Employee " + this.name + " is " + this.age + " years old.");
+        //             }
+        //         });
+
+        //         return person;
+        //     };
+
+        //     var emp = new Employee("Ali", 30, 2000);
+        //     emp.salary = 3000;
+        //    console.log(emp.salary);
+        //    console.log(emp.show())
+
+
+
+        //output 
+
+        //emp is an object created using     /////// خطا /////////////
+        //Basic object Literal pattern       /////// خطا /////////////
+        //Factory function                   /////// الاجابه الصحيحه /////////////
+        //Custom Object Constructor function      /////// خطا /////////////
+        //data descriptor                    /////// خطا /////////////
+        //accessor descriptor                /////// خطا /////////////
+        // none of the above               /////// خطا /////////////
+
+
+
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////
+
+
+        //question 
+        // var obj = {
+        //   name: "banana yellow fruit",
+        //   details: {
+        //     myname: "banana",
+        //     mycolor: "yellow",
+        //     mytype: "fruit",
+        //     detailsFunc: function() {
+        //       console.log("banana");
+        //     }
+        //   },
+        //   click: function() {
+        //     var x = this.details.mycolor;
+        //     return x.charAt(this.details.mycolor.length - 1); // L1
+        //   }
+        // };
+
+
+
+        // alert(obj["details"]["mytype"]);
+
+
+
+
+        // this will give an error 
+
+
+
+
+        // undefined 
+
+
+
+
+        // fruit        الاجابه صحيحه 
+
+
+
+
+        // None of the above
+
+
+
+        // alert(obj.click())      // w 
+
+        // obj.details.detailsFunc();    // banana
+
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        //question
+
+        // var vehicle = {
+        //   name: "myVehicle",
+        //   myFunc: function () {
+        //     console.log(this);
+        //   }
+        // };
+
+        // function Car() {
+        //   this.name = "myCar";
+        //   this.myFunc = function () {
+        //     console.log(this.name);
+        //   };
+        //   this.newMyFunc = function () {
+        //     alert(this.name);
+        //   };
+        // }
+
+        // var c = new Car();     // c.name = "myCar"
+        // c.newMyFunc();         // L1
+        // // vehicle.newMyFunc();   // L2 ❌ (we'll talk about this too)
+        // var x = c.newMyFunc.bind(vehicle); // L3
+        // x();                   // Alerts "myVehicle"
+
+        ///What is the expected output of running L1    ==>   mycar 
+        ///What is the expected output of running L2    ==>   this will given an error
+        ///What is the expected output of running L3    ===> my vechile   
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////
+        //question
+
+        // function User(fnm, age, lnm) {
+        //     this.name = {
+        //         fname: fnm,
+        //         lname: lnm
+        //     };
+        //     this.age = age;
+        // }
+
+        // var me = new User("JavaScript", 25); // لاحظي إننا ما مررناش lnm (الاسم الأخير)
+
+        // User.prototype.getFullName = function() {
+        //     return this.name;
+        // };
+        // me.getFullName();   //   { fname: "JavaScript", lname: undefined }
+
+        // User.prototype.getFullName = function() {
+        //     return this.name.fname + " " + this.name.lname;
+        // };
+        // newMe.getFullName(); // سيعيد "ahmed ali"
+
+
+        // function() {
+        //     var a = b = 5;
+        // }
+        // console.log(a); // L1   //  undefined
+
+
+        //   var prop = "windowprop";
+        //         (function () {
+        //             var myObject = {
+        //                 prop: "prop1",
+        //                 func: function () {
+        //                     var a = b = 3;
+        //                     console.log("property function: this.prop = " + this.prop);
+        //                     setTimeout(function () {
+        //                         console.log("setTimeout function: myObject.prop = " + myObject.prop);
+        //                     }, 3000);
+        //                     (function () { console.log("immediate function: this.prop = " + this.prop); }());
+        //                 }
+        //             };
+        //             var prop ='stringProp';
+        //             myObject.func();
+        //         })();
+        //         console.log("a defined? " + (typeof a != 'undefined'));
+        //         console.log("b defined? " + (typeof b !== 'undefined'));
+
+
+
+
+        //  var obj = new Object();
+        //  obj.name = "mmmmmmmm";
+        //  obj.age = 25;
+        //   data = "data";
+        //  console.log(obj[data])
+
+
+
+        // var myobj = {
+        //     name : "myObj Object " ,
+        //     myfunc : function(){
+        //         alert(this.name)
+        //     },
+        //     myfuncArgs : function (x,y){
+        //         alert(this.name + "" + x + "" + y)
+        //     }
+        // };
+        // var obj1 = {name : "obj1 Object" }
+
+        // myobj.myfuncArgs(1,2); // myObj Object   1    2
+        // myobj.myfuncArgs.apply(obj1 , [1,2]);  // obj1 Object     1  2
+        // myobj.myfuncArgs.call(obj1 , [1,2]);   // obj1 Object     1  2
+
+
+        //  var user = function (name , age ){
+        //     var year = ((new Date().getFullYear()) - age )
+        //     this.getyearBorn = function(){
+        //         return year ;
+        //     }
+
+        //  };
+        //  var user1 = new user("esraa " , 25);
+        //  alert(user1.getyearBorn()); // 20000
+        //  alert(user1.year);   // undefined 
+
+
+
+
+
+        // function fhello(){
+        //     return "Hello"
+        // }
+        // var fhey = function (){
+        //     return "Hey ............."
+        // }
+        // var x1 = fhello();
+        // function fhi(){
+        //     return "Hiiiiiiiiiiiiiiiiiiiiiii"
+        // }
+        // var myfun = function(){
+        //     var x2 = fhey();   // x2 =heyyyyyyyyyyyyyyyy
+        //     return function (){
+        //         var x4 = fhi();   // x4 = hiiiiiiiiiiiiiiiiiii
+        //         console.log(x1+x4+x2); // hello       hiiiiiiiiiiiiii       heyyyyyyyyyyyyy
+        //     };
+        // }
+        // var fun = myfun();
+        // fun();
+
+
+        // function  User(name){
+        //     this.name = name ;
+        //     this.display = function (){
+        //         return this.name
+        //     }
+        // }
+
+
+        // var me = new User("MY Name")
+        // console.log(me);
+        // alert(me.name);   // MY Name
+        // alert(me.display()); // MY Name
+        // alert(me.constructor == User);   // true
+        // alert(me.constructor == Object);  // false
+
+
+        // function Employee (nm , age){
+        //     this.ename = nm ,
+        //     this.age = age , 
+        //     this.show = function (){
+        //         console.log(this)
+        //         var that = this
+        //         setTimeout(function(){
+
+        //             alert("Employee" + that.ename + that.age)   // undefined             undefined
+        //         },3000)
+        //     }
+        // }
+
+
+        // var me = new Employee("Nour" , 5);
+        // me.show()
+
+
+
+        // function Employee (name , age ){
+        //     this.name = name;
+        //     this.age = age ;
+        //     Employee.Count++;
+
+        // }
+        // Employee.Count = 0;
+        // Employee.getcount =  function (){
+        //     return Employee.Count
+        // }
+
+        // data 
+        // var Employee = function (name , age){
+        //     var emp = {}
+        //     Object.defineProperty(emp , "nm" , {
+        //         get: function(){
+        //             return name
+
+        //         },
+        //         set: function(value){
+        //             name= value ;
+
+        //         }
+
+
+        //     })
+        //     return emp;
+
+        // }
+
+        // var e= new Employee();
+        //  e.nm = "Nour"; 
+        //  console.log(e.nm);
+        // var t_emp = e.nm;
+        // console.log(t_emp);
+
+
+        // (function() { 
+        // console.log(1); 
+        // setTimeout(function(){console.log(2)}, 1000); 
+        // setTimeout(function(){console.log(3)}, 0); 
+        // console.log(4); 
+        // })();
+
+
+
+        // var a = (function (y,x) { 
+        // var x = null; 
+        // return { 
+        // fun : function (x) { return this.bar(x*y);}, 
+        // bar : function(x) {return x + y;} 
+        // } 
+        // } )(3,4)
+        // // x= 3    y=4      2*3=6    6+3 =9
+        // alert(a.fun(2));
+
+
+
+        // var a={},
+        //  b={key:'b'},
+        //   c={key:'c'}; 
+        // a[b]=123; 
+        // a[c]=456; 
+
+        // console.log(a[b]); 
+        // console.log(a.b); 
+
+
+
+        // (function() { 
+        // console.log(0); 
+        // setTimeout(function(){console.log(1)}, 0); 
+        // console.log(2); 
+        // setTimeout(function(){console.log(3)}, 1000); 
+        // console.log(4); 
+        // setTimeout(function(){console.log(5)}, 0); 
+        // console.log(6); 
+        // })(); 
+
+        //0  2  4 6 1 5 3
+
+
+        // (function () {
+        //     var myObject = {
+        //         prop: "prop1",
+        //         func: function () {
+        //             var a = b = 3;
+        //             console.log("property function: this.prop = " + this.prop);    // prop1
+        //             setTimeout(function () {
+        //                 console.log("setTimeout function: myObject.prop = " + myObject.prop); // prop1
+        //             }, 3000);
+        //             (function () { console.log("immediate function: this.prop = " + this.prop); }());  // undefined
+        //         }
+        //     };
+        //     var prop = 'stringProp';
+        //     myObject.func();
+        // })();
+        // console.log("a defined? " + (typeof a != 'undefined'));  // false
+        // console.log("b defined? " + (typeof b !== 'undefined')); // true
+
+
+
+
+        // function User(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // var me = new User("JavaScript", 25);
+        // User.prototype.getName = function () { return this.name; };
+        // User.prototype.getAge = function () { return this.age; };
+        // User.prototype.job = "WebTech";
+        // User.Loc = "Cairo";
+        // alert(User.Loc);
+        // alert(me.Loc);
+
+        // function Person(address, city) {
+        //     this.address = address;
+        //     this.city = city || "Cai";
+        // }
+
+        // console.log(me);
+        // User.prototype = Person.prototype;
+        // Person.prototype.Country = "Egypt";
+        // alert("country: "+me.Country+"; city: "+me.city) 
+
+        // cairo undefined 
+
+
+
+        // var Employee = function (name, age, salary) {
+        //     var person = {};
+        //     Object.defineProperty(person, "name", {
+        //         value: name, writable: true, configurable: true, enumerable: true
+        //     });
+        //     Object.defineProperty(person, "age", { value: age });
+        //     Object.defineProperty(person, "salary", {
+        //         get: function () { return salary; },
+        //         set: function (val) { salary = val; }
+        //     });
+        //     Object.defineProperty(person, "show", {
+        //         value: function () { alert("Employee " + this.name + " is " + this.age + " years old."); }
+        //     });
+        //     return person;
+        // }
+        // var emp = new Employee();
+        // emp.salary = 3000;
+        // emp.getSalary(); // L1 
+
+
+
+        // var obj = {
+        //     name: "banana yellow fruit",
+        //     details: {
+        //         myname: "banana",
+        //         mycolor: "yellow",
+        //         mytype: "fruit",
+        //         detailsFunc: function () { console.log("banana"); }
+        //     },
+        //     click: function () {
+        //         var x = this.details.mycolor;
+        //         return x.charAt(this.details.mycolor.length - 1); // L1 
+        //     }
+        // };
+
+        // alert(obj["details"]["mytype"])  /// fruit
+        // alert(obj.click())   // w
+        // obj.details.detailsFunc() // banana
+
+
+
+
+        // var vehicle = {
+        //     name: "myVehicle",
+        //     myFunc: function () { console.log(this); }
+        // };
+        // function Car() {
+        //     this.name = "myCar";
+        //     this.myFunc = function () { console.log(this.name); }
+        //     this.newMyFunc = function () { alert(this.name); }
+        // }
+        // var c = new Car();
+        // c.newMyFunc();    //mycar
+        // // vehicle.newMyFunc(); // L2    //error
+        // var x = c.newMyFunc.bind(vehicle); // L3    // myvechile
+        // x();
+
+
+
+        // var box = { outerW: 50 };
+        // function bWidth() {
+        //     alert(this.outerW);
+        // }
+        // bWidth.apply(box); // L1 
+        // bWidth();
+
+
+
+        function Person(address, city) {
+            this.address = address;
+            this.city = city || "Cai";
+        }
+
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        User.prototype = Person.prototype;
+        Person.prototype.Country = "Egypt";
+
+        var me = new User("JavaScript", 25);
+
+        alert("country: " + me.Country + "; city: " + me.city);
+
+//////////////////////////////////////////////////////
+
+
+
+        // function User(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // var me = new User("JavaScript", 25);
+        // User.prototype.getName = function () { return this.name; };
+        // User.prototype.getAge = function () { return this.age; };
+        // User.prototype.job = "WebTech";
+        // User.Loc = "Cairo";
+        // alert(User.Loc);
+        // alert(me.Loc);
+
+        // function Person(address, city) {
+        //     this.address = address;
+        //     this.city = city || "Cai";
+        // }
+
+        // console.log(me);
+        // User.prototype = Person.prototype;
+        // Person.prototype.Country = "Egypt";
+        // alert("country: "+me.Country+"; city: "+me.city) 
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

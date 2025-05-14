@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Goal Post</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const width = canvas.width;
+  const height = canvas.height;
+
+  const skyGradient = ctx.createLinearGradient(0, 0, 0, height / 2);
+  skyGradient.addColorStop(0, "#00BFFF"); // Blue
+  skyGradient.addColorStop(1, "#FFFFFF"); // White
+
+  ctx.fillStyle = skyGradient;
+  ctx.fillRect(0, 0, width, height / 2);
+
+
+  const groundGradient = ctx.createLinearGradient(0, height / 2, 0, height);
+  groundGradient.addColorStop(0, "#32CD32"); // Green
+  groundGradient.addColorStop(1, "#FFFFFF"); // White
+
+  ctx.fillStyle = groundGradient;
+  ctx.fillRect(0, height / 2, width, height / 2);
+
+  
+  const goalWidth = 200;
+  const goalHeight = 100;
+  const startX = (width - goalWidth) / 2;
+  const startY = height / 2;
+
+  const gradientLine = ctx.createLinearGradient(0, startY, 0, startY + 30);
+  gradientLine.addColorStop(0, "#000000");
+  gradientLine.addColorStop(1, "rgba(0,0,0,0)");
+
+  ctx.lineWidth = 4;
+
+  //left line
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(startX, startY - goalHeight);
+  ctx.strokeStyle = gradientLine;
+  ctx.stroke();
+
+  // right line
+  ctx.beginPath();
+  ctx.moveTo(startX + goalWidth, startY);
+  ctx.lineTo(startX + goalWidth, startY - goalHeight);
+  ctx.strokeStyle = gradientLine;
+  ctx.stroke();
+
+  //above line
+  ctx.beginPath();
+  ctx.moveTo(startX, startY - goalHeight);
+  ctx.lineTo(startX + goalWidth, startY - goalHeight);
+  ctx.strokeStyle = "#000000";
+  ctx.stroke();
+</script>
+</body>
+</html>
