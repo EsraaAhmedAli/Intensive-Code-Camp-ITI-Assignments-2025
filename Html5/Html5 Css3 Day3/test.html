@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>test</title>
+  
+</head>
+<body>
+    <script>
+        // function mainfun(){
+        //     function innerfun (){
+        //      return '3'
+
+        //     }
+        //     console.log(innerfun())
+        //     return 'simple'
+        // }
+        // var result = mainfun();
+        // console.log(result);
+
+
+        // function outerfun(){
+        //     var arr = [];
+        //     for (var i=0 ; i<3 ; i++){
+        //         arr.push(function(){
+        //             console.log(i);
+        //         })
+        //     }
+        //     return arr 
+        // }
+        // var result = outerfun();
+        // result[0]()
+        // result[1]()
+        // result[2]()
+
+
+        // function outerfun (){
+        //     var arr = [];
+        //     for (var i =0 ; i<3 ; i++){
+        //         var sum = function (){
+        //             console.log(i)
+        //         }
+        //         return sum;
+        //     }
+          
+        // }
+        // var result = outerfun();
+     
+
+
+        // var str = "this is javascript";
+        // console.log([].join.apply(str))
+
+        var b = 2;
+        var w =1;
+        function fun (x,y){
+            var z=10;
+            var a =1;
+            var innerfun = function(h,g){
+                var w = 20;
+                return x+y+z+a+b+w+h+g
+            }
+            return innerfun
+        }
+        var result = fun(1,2)
+        result(1,2)
+    </script>
+    
+</body>
+</html>

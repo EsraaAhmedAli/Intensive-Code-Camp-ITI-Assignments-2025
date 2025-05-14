@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>task1 </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        input:invalid {
+            outline: 2px solid rgb(253, 71, 5);
+        }
+
+        input:valid {
+            outline: 2px solid rgb(193, 193, 232);
+        }
+
+
+       
+        .text1:valid + span {
+            display: none;
+        }
+        .text2:valid + span {
+            display: none;
+        }
+
+       input{display: block;}
+      
+
+    </style>
+</head>
+
+<body>
+    <h1>Change Email Address</h1>
+    <input class="text1" type="text" placeholder="Username" id="usrname" required> 
+    <span> The required user name may only be a series of alphabetical characters .</span>
+    <input class="text2" type="email" placeholder="Useremail" id="Useremail" required> 
+    <span> The required email may not include any special characters other than the @ sign .</span> <br>
+     <button id="btn"> Change </button>
+
+
+    <script src='./task1.js'></script>
+</body>
+
+</html>
