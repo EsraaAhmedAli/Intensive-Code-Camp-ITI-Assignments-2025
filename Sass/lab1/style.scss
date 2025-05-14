@@ -1,0 +1,48 @@
+@use "./partial_file/_colors.scss" as c; 
+
+$font-sizes: 14px, 16px, 18px, 20px;
+
+.main {
+  .main-title {
+    color: c.$primary-color;
+  }
+
+  .main-subtitle {
+    color: c.$secondary-color;
+  }
+
+  .main-btn {
+    background-color: c.$primary-color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: c.$secondary-color;
+    }
+  }
+}
+
+.content {
+  @each $size in $font-sizes {
+    .font-#{$size} {
+      font-size: $size;
+    }
+  }
+}
+
+.finish-btn {
+  width: 100%;
+  height: 10vh;
+  background-color: c.$primary-color;
+  color: #fff; 
+
+  @media (min-width: 768px) {
+    width: 50%;
+    height: 5vh;
+    background-color: c.$secondary-color;
+    color: #fff; 
+  }
+}
