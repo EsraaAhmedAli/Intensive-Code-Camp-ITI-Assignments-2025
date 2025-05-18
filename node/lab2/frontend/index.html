@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Books Store</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <h1>Books Store</h1>
+
+    <div style="text-align:center; margin-bottom: 20px;">
+        <input type="number" id="searchId" placeholder="Enter Book ID to search"
+            style="padding:8px; font-size:16px; width: 200px;" />
+        <button onclick="searchBook()" class="search">Search by ID</button>
+        <button onclick="loadBooks()" style="margin-left: 10px;" class="search">Show All</button>
+    </div>
+
+
+    <div id="books"></div>
+
+    <script src="./scripit.js"> </script>
+</body>
+
+</html>
